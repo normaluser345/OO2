@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>O&O Daily Message</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script>
+  // An array of love messages for your wife
+  var messages = [
+    "وليلةٍ بات من أهوى ينادمني – ما كان أجملَه عندي وأجمَلها ",
+    "Happy Birthday, my angel! If I could, I would write it across the sky so that everyone could see it and know that you are truly loved!",
+    "I’d rather spend one moment holding you than a lifetime knowing I never could.",
+    "Thinking of you keeps me awake. Dreaming of you keeps me asleep. Being with you keeps me alive.",
+    "If you live to be a hundred, I want to live to be a hundred minus one day so I never have to live without you.",
+    "To love and be loved is to feel the sun from both sides.",
+    "You don’t love someone for their looks, or their clothes, or for their fancy car, but because they sing a song only you can hear.",
+    "You can’t blame gravity for falling in love.",
+    "I love you more than I have ever found a way to say to you.",
+    "I love you more today than yesterday, but not as much as tomorrow.",
+    "You smile, I smile. That’s how it works.",
+    "All of me loves all of you.",
+    "I’m much more me when I’m with you.",
+    "In this huge world, among thousands of cities, millions of cars and houses, the hustle and bustle, lives a beautiful girl. The best girl. To you, I want to say: Good morning sweetheart.",
+    "Every morning I wake up. I miss you, honey.",
+    "I am thinking about four things this morning. The obstacle is the path, today is a good day, what comes is a gift, and I love you!",
+    "You light up my life!",
+    "You flourished and still flourish my life",
+    "I am always excited to wake up each day because I know there’s someone worth waking up for. Good morning to the sweetest person I’ve ever known.",
+    "I swear I couldn’t love you more than I do right now, and yet I know I will tomorrow.",
+    "Waking up every morning knowing that you are there for me, light up my world brighter than the sun could ever be. Good morning to the love of my life.",
+    "It is lovely, when I forget all birthdays, including my own, to find that somebody remembers me.",
+    "Love, With every breath I take, I pray you know how much I love you. Happy Birthday to my everything.",
+    "If I could give you one thing in life, I would give you the ability to see yourself through my eyes, only then would you realize how special you are to me.",
+    "I wish that the shoulder you rest your head upon is always mine. I wish the hand that supports you is mine. I wish the ears that listen to you when you talk is mine. I just want to be there for you always and forever.",
+    "Sharing my life with you was the best decision I’ve ever made. I am grateful for every moment.",
+    "B7WI",
+    "BMWI",
+    "YHOVI",
+    "When I see you, I see the heaven in earth",
+    "You will always be the SAN of my heart"
+  ];
+  
+  // A function that returns a random message from the array
+  function getRandomMessage() {
+    var index = Math.floor(Math.random() * messages.length);
+    return messages[index];
+  }
+  
+  // A function that displays a new message every day
+  function displayMessage() {
+    // Get the current date
+    var today = new Date();
+    
+    // Get the element where the message will be shown
+    var messageElement = document.getElementById("message");
+    
+    // Check if there is a message stored for today
+    var storedMessage = localStorage.getItem(today.toDateString());
+    
+    // If there is no message stored for today
+    if (storedMessage === null) {
+      // Get a random message from the array
+      var newMessage = getRandomMessage();
+      
+      // Store the message for today
+      localStorage.setItem(today.toDateString(), newMessage);
+      
+      // Display the message
+      messageElement.innerHTML = newMessage;
+      
+      // If there is a message stored for today
+      } else {
+        // Display the stored message
+        messageElement.innerHTML = storedMessage;
+      }
+  }
+  
+  // Call the displayMessage function when the page loads
+  window.onload = displayMessage;
+  
+  </script>
+  </head>
+<body style="display: flex;
+justify-content: center;
+align-items: flex-end;  background-size: cover;
+background-repeat: no-repeat;
+background-position: right; 
+background-size: cover ;
+background-image: url('../OO2/assets/BG.jpg');"
+>
+
+<div class="container mb-3 "><div class="card text-center">
+  <div class="card-header">
+    <!-- Featured -->
+  </div>
+  <div class="card-body ">
+    <h5 class="card-title">My Love</h5>
+    <p class="card-text" id="message"></p>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+  <div class="card-footer text-body-secondary">
+    Love you more than you can imagine ...
+  </div>
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+</body>
+</html>
